@@ -1,0 +1,56 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <!-- 
+<script type="text/javascript">
+        document.write('<h1>Dodali smo naslov</h1>');
+</script>
+-->
+
+    <input type="Button" value="Tekst na gumb" onclick="window.alert('Kliknuli ste dobro');">
+    <hr>
+    <script>
+        var nazivVarijable = "Vrijednost varijable";
+        var broj = 5, var2 = " ime ", var3 = " prezime ", brojCipela = 42;
+        if (broj >= 3
+            &&  //oba uvjeta moraju biti ispunjena - logička operacija AND tj. I
+            brojCipela < 45) { //izvršni blok koji se izršava ako je uvjet u zagradi ispunje tj. logička istina (true)
+            document.write(var2 + var3 + broj);
+
+        } else {
+            document.write("Uvjet iz provjere nije ispunjen!");
+        }
+        document.write("<hr>");
+        let x = "0", y = "0", rezultat;
+        if (y != 0) {
+            /* sa uskličnikom negiramo slijedeću operaciju, u ovom slučaju provjeravamo jeli 
+             vrijednost varijable y različit od 0 */
+            rezultat = 100 / y;
+        } else if (x != 0) {
+            rezultat = 100 / x;
+        } else if (y == 0 && x === 0) {
+            // dva znaka == predstavljaju operaciju ispitivanja vrijednosti
+            //tri znaka === ispituje se i vrijednost i tip vrijednosti u varijabli
+            /* tablica za logičku AND tj., logički I operator
+            1 I 0 = 0
+            0 I 1 = 0
+            1 I 1 = 1
+            pri čemu 0= flase= logička laž
+            pri čemu 1= true= logička jedinica
+            */
+            rezultat = " obje varijable imaju vrijednost 0";
+        } else if (y === "0") {
+            rezultat = " y je tekst iliti string";
+        } else {
+            rezultat = " niti jedna provjera nije logički istinita ";
+        }
+        document.write(" rezultat je " + rezultat);
+
+    </script>
+
+</body>
+
+</html>

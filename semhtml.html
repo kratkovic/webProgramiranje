@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantički HTML tagovi</title>
+    <link rel="stylesheet" href="css/korisnici.css" />
+</head> 
+
+<style>     
+tbody tr:hover{
+    background-color: #e9e2e2;
+}
+</style>
+<body>
+    <header> Naslov na stranici</header>
+    <div id="izbornik-toggle">&equiv;Izbornik</div>
+    <nav>
+        <a href="#"> Korisnici</a> <!-- ctrl + D dodatno slektiranje istog pojma-->
+        <a href="narudzbe.html"> Narudžbe</a>
+        <a href="artikli.html"> Artikli </a> 
+        <!-- ctrl + shift + strelica dole dupliciranje linije -->
+    </nav>
+    <article id="pregled-korisnika">
+        <h2> Pregled  korisnika</h2>
+        <table>
+            <thead>
+                <tr>                    
+                    <th> </th>
+                    <th> Ime</th>
+                    <th> Prezime</th>
+                    <th> Email</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr>
+                    <td>
+                        <a href="korisnik.html">
+                            <img 
+                            src="https://as1.ftcdn.net/v2/jpg/02/11/65/10/1000_F_211651043_dwEPQfpE3acdwhaq0BwZ9xLLBEO3PQRs.jpg" 
+                            alt="Korisnikova slika">
+                        </a> </td>
+                    <td>Mirko</td>
+                    <td>Mirković</td>
+                    <td>mirko@mail.com</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="korisnik.html">
+                            <img src="https://as2.ftcdn.net/v2/jpg/06/35/55/01/1000_F_635550122_dAcUqkOyrUVkURNB5iFwVFJ7fYjD66SC.jpg" alt="Korisnikova slika">
+                        </a></td>
+                        <td>Slavko</td>
+                    <td>Slavković</td>
+                    <td>slavko@mail.com</td>
+                </tr>
+                <tr>
+                    <td><a href="korisnik.html">
+                        <img src="https://as1.ftcdn.net/v2/jpg/06/00/76/38/1000_F_600763870_qcLj0eoDAXQw845hPrum6M2URnh6hyVo.jpg" alt="Korisnikova slika">
+                    </a></td>
+                        <td>Josip</td>
+                    <td>Josipović</td>
+                    <td>josip@mail.com</td>
+                </tr>
+
+             </tbody>
+        </table>
+
+    </article>
+    
+</body>
+</html>

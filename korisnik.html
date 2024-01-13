@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korisnik</title>
+    <link rel="stylesheet" href="css/korisnici.css" />
+</head>
+
+<style>
+    table tbody td img{ /*css slektor za specifično ugnježđeni element */
+        width: 300px;
+        border-radius: 30%;
+    }
+</style>
+<body>
+    <header> Naslov na stranici</header>
+    <div id="izbornik-toggle" onclick="paliGasiIzbornik()">&equiv;Izbornik</div>
+    <nav id="idnav">
+        <a href="semhtml.html"> Korisnici</a> <!-- ctrl + D dodatno slektiranje istog pojma-->
+        <a href="narudzbe.html"> Narudžbe</a>
+        <a href="artikli.html"> Artikli </a> 
+        <!-- ctrl + shift + strelica dole dupliciranje linije -->
+    </nav>
+    <article id="pregled-korisnika">
+        <h2> Izmjena korisnika</h2>
+        <div class="redak">
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Ime:</td>
+                            <td><input type="text" id="ime" name="ime">
+                            </td>
+                        </tr>                        
+                        <tr>
+                            <td>Prezime:</td>
+                            <td><input type="text" id="prezime" name="prezime">
+                            </td>
+                        </tr>                       
+                        <tr>
+                            <td>E-pošta:</td>
+                            <td><input type="text" id="email" name="email">
+                            </td>
+                        </tr>                       
+                        <tr>
+                            <td>Datum rođenja:</td>
+                            <td><input type="datetime-local" id="rodjendan" name="rodjendan">
+                            </td>
+                        </tr>                       
+                        <tr>
+                            <td>Datum aktivacije:</td>
+                            <td><input type="datetime-local" id="aktivacija" name="aktivacija">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <img 
+                                src="https://as1.ftcdn.net/v2/jpg/02/11/65/10/1000_F_211651043_dwEPQfpE3acdwhaq0BwZ9xLLBEO3PQRs.jpg" 
+                                alt="Korisnikova slika">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="file" id="data1" name="data1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>      
+
+    </article>
+    <script>
+        function paliGasiIzbornik(){
+            var kulVarijabla = document.getElementById("idnav");
+            kulVarijabla.style.display = (kulVarijabla.style.display === "block") ? "none" : "block";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikli</title>
+    <link rel="stylesheet" href="css/artikli.css" />
+</head>
+<style>
+    table tbody td img {
+        width: 300px;
+        border-radius: 30%;
+    }
+</style>
+<body>
+    <header>Naslov na stranici</header>
+    <div id="izbornik-toggle" onclick="paliGasiIzbornik()">&equiv;Izbornik</div>
+    <nav id="idnav">
+        <a href="semhtml.html">Korisnici</a>
+        <a href="narudzbe.html">Narudžbe</a>
+        <a href="#">Artikli</a>
+    </nav>
+    <article id="pregled-artikala">
+        <h2>Pregled i ažuriranje artikla</h2>
+        <div class="redak">
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Naziv:</td>
+                            <td><input type="text" id="naziv" name="naziv"></td>
+                        </tr>
+                        <tr>
+                            <td>Šifra:</td>
+                            <td><input type="text" id="sifra" name="sifra"></td>
+                        </tr>
+                        <tr>
+                            <td>Vrsta:</td>
+                            <td><input type="text" id="vrsta" name="vrsta"></td>
+                        </tr>
+                        <tr>
+                            <td>Datum unosa:</td>
+                            <td><input type="datetime-local" id="unos" name="unos"></td>
+                        </tr>
+                        <tr>
+                            <td>Datum aktivacije:</td>
+                            <td><input type="datetime-local" id="aktivacija" name="aktivacija"></td>
+                        </tr>
+                        <tr>
+                            <td>Datum deaktivacije:</td>
+                            <td><input type="datetime-local" id="deaktivacija" name="deaktivacija"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Slika 1:</td>
+                            <td><input type="file" id="slika1" name="slika1"></td>
+                        </tr>
+                        <tr>
+                            <td>Slika 2:</td>
+                            <td><input type="file" id="slika2" name="slika2"></td>
+                        </tr>
+                        <tr>
+                            <td>Slika 3:</td>
+                            <td><input type="file" id="slika3" name="slika3"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="Ažuriraj">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+    <script>
+        function paliGasiIzbornik() {
+            var kulVarijabla = document.getElementById("idnav");
+            kulVarijabla.style.display = (kulVarijabla.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

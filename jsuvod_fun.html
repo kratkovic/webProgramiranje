@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        let mojePolje=new Array(10);
+        //definicija funkcije
+        function mojaPrvaFunkcija(){
+            let cvor=document.getElementById("unos");
+            let vrijednost = cvor.value;
+            mojePolje.push(vrijednost);
+            cvor.value="";
+            /* drugačiji način 
+            mojePolje.push(document.getElementById("unos"));
+            document.getElementById("unos").value="";
+             */
+            let lista = document.getElementById("nasaLista");//dohvat
+            let stavka =document.createElement("li");//kreiramo strukuru: <li></li>
+            let vrStavke= document.createTextNode(vrijednost); //"tekst"
+            stavka.appendChild(vrStavke);// <li>"tekst"</li>
+            lista.appendChild(stavka);//<ul> .... <li>"tekst"</li>
+        }
+        //poziv našoj funkciji
+       // mojaPrvaFunkcija();
+    </script>
+    <div>
+        <input type="text" id="unos">
+        <input type="button" onclick="mojaPrvaFunkcija()" value="spremi">
+    </div>
+    <ul id="nasaLista">
+
+    </ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petlje u javascript-u</title>
+</head>
+<body>
+    <script>
+        let index = 0; //definiranje početnog uvjeta izvan for-petlje
+        for (  ; true ; ) {//index = index +1 ; a-- => analogno a=a-1
+            index++;
+            document.write("<div> ovo je "+ index +"-ti div na stranici</div>") ;
+            if(index < 5 ) {  //ovdje prekidamo izvršavanje petlje pod uvjetom inače ide beskonačno
+             break;
+            }
+        }
+        //polje je kao novčanik gdje svka novčanica i kovanica in a svoj pretinac, a dohvaćmom ju preko indeksa
+        let polje= ["5 €", "10 Eura", 7];// indeksiranje kreće od 0, 
+           /*  u zagadi su indeksi, pod navodnicima je vrijednnost na tom indeksu
+           polje[0] ="5 €",
+            polje[1]= "10 Eura"
+            polje[2] =7 
+            */
+        let brojElemenata=polje.length;
+        
+        while(brojElemenata>0){
+            document.write ("<div> while petlja ["+brojElemenata+"] : "+polje[brojElemenata -1 ]+"</div>");
+            brojElemenata--;
+        }
+
+        do{
+            document.write ("<div> do -while petlja ["+brojElemenata+"] : "+polje[brojElemenata]+"</div>");
+            brojElemenata++;
+        }while(brojElemenata<polje.length);
+
+        
+    </script>
+</body>
+</html>

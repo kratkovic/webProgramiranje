@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantički HTML tagovi sa upotrebom lokalnog json-a</title>
+    <link rel="stylesheet" href="css/korisnici.css" />
+</head>
+
+<style>
+    tbody tr:hover {
+        background-color: #e9e2e2;
+    }
+
+    #izmjena-korisnika {
+        display: block;
+    }
+</style>
+
+<body>
+    <header> Naslov na stranici</header>
+    <div id="izbornik-toggle" onclick="paliGasiIzbornik()">&equiv;Izbornik</div>
+    <nav id="idnav">
+        <a href="pregled-korisnika">Korisnici</a> <!-- ctrl + D dodatno slektiranje istog pojma-->
+        <a href="pregled-narudžbi">Narudžbe</a>
+        <a href="pregled-artikala"> Artikli </a>
+        <!-- ctrl + shift + strelica dole dupliciranje linije -->
+    </nav>
+    <article id="pregled-korisnika">
+        <h2> Pregled korisnika</h2>
+        <a href="novi-korisnik"> Novi korisnik</a>
+        <table>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th> Ime</th>
+                    <th> Prezime</th>
+                    <th> Email</th>
+                </tr>
+            </thead>
+            <tbody id="tab">
+
+            </tbody>
+        </table>
+        <div class="paggination">
+            <a href="#">1</a>
+            <a href="#" class="odabran">2</a>
+            <a href="#">3</a>
+        </div>
+    </article>
+    <article id="izmjena-korisnika">
+        <h2> Izmjena korisnika</h2>
+        <div class="redak">
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Ime:</td>
+                            <td><input type="text" id="ime" name="ime">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prezime:</td>
+                            <td><input type="text" id="prezime" name="prezime">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>E-pošta:</td>
+                            <td><input type="text" id="email" name="email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum rođenja:</td>
+                            <td><input type="datetime-local" id="rodjendan" name="rodjendan">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum aktivacije:</td>
+                            <td><input type="datetime-local" id="aktivacija" name="aktivacija">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <img src="https://as2.ftcdn.net/v2/jpg/03/16/76/07/1000_F_316760793_VwaEcqW6A4D5A6Li9j4ArqY2i0KuSS5o.jpg"
+                                    alt="Korisnikova slika">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="file" id="data1" name="data1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </article>
+    <article id="pregled-narudžbi">
+        <h2> Pregled Narudžbi</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th> Broj Narudžbe</th>
+                    <th> Partner</th>
+                </tr>
+            </thead>
+            <tbody id="tab_nar">
+
+            </tbody>
+        </table>
+        <div class="paggination">
+            <a href="#" class="odabran">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+    </article>
+
+
+    <article id="pregled-artikala">
+        <h2> Pregled Artikala</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th> Broj Artikla</th>
+                    <th> Naziv</th>
+                </tr>
+            </thead>
+            <tbody id="tab_art">
+
+            </tbody>
+        </table>
+        <div class="paggination">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#" class="odabran">3</a>
+        </div>
+    </article>
+
+
+    <script src="lokalni_json/podaci.js"></script>
+    <script>
+        let gumbPregledKorisnika = document.querySelector('[href="pregled-korisnika"]');
+        gumbPregledKorisnika.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById("pregled-korisnika").style.display = "block";
+            document.getElementById("izmjena-korisnika").style.display = "none";
+            document.getElementById("pregled-narudžbi").style.display = "none";
+            document.getElementById("pregled-artikala").style.display = "none";
+        });
+
+        let gumbPregledNar = document.querySelector('[href="pregled-narudžbi"]');
+        gumbPregledNar.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById("pregled-korisnika").style.display = "none";
+            document.getElementById("izmjena-korisnika").style.display = "none";
+            document.getElementById("pregled-narudžbi").style.display = "block";
+            document.getElementById("pregled-artikala").style.display = "none";
+
+        });
+
+        let gumbPregledArt = document.querySelector('[href="pregled-artikala"]');
+        gumbPregledArt.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById("pregled-korisnika").style.display = "none";
+            document.getElementById("izmjena-korisnika").style.display = "none";
+            document.getElementById("pregled-narudžbi").style.display = "none";
+            document.getElementById("pregled-artikala").style.display = "block";
+
+        });
+
+
+        let gumbIzmjenaKorisnika = document.querySelector('[href="novi-korisnik"]');
+        gumbPregledArt.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById("pregled-korisnika").style.display = "none";
+            document.getElementById("izmjena-korisnika").style.display = "block";
+            document.getElementById("pregled-narudžbi").style.display = "none";
+            document.getElementById("pregled-artikala").style.display = "block";
+            document.getElementById("novi-korisnik").style.display = "block";
+
+            let naslov = document.querySelector('#izmjena-korisnika h2');
+            naslov.innerHTML="Novi Korisnik";
+
+        });
+
+        var body = document.getElementById("tab");
+        //iniciljano postalvjanje prije foreach petlje
+        let bufferZaIspis = "";
+        // foreach element iz polja podaci (napunjen u podaci.js skripti)
+        podaci.forEach(element => {
+            bufferZaIspis += "<tr>";
+            bufferZaIspis += "<td>";
+            bufferZaIspis += "<a href=\"korisnik.html\">"; // \ je escape znak kojim se 'isključuje' reovno funkcijoniranje " (dvostrukog navodnika)
+            bufferZaIspis += "<img src=\"" + element.slika + "\" alt=\"Korisnikova slika\">";
+            bufferZaIspis += "</a>";
+            bufferZaIspis += "</td>";
+            bufferZaIspis += "<td>" + element.ime + "</td>";
+            bufferZaIspis += "<td>" + element.prezime + "</td>";
+            bufferZaIspis += "<td>" + element.email + "</td>";
+            bufferZaIspis += "</tr>";
+        }
+        );
+        //istakanje renedirane vrijedsnoti u body DOM element
+        body.innerHTML = bufferZaIspis;
+
+        body = document.getElementById("tab_nar");
+        //iniciljano postalvjanje prije foreach petlje
+        bufferZaIspis = "";
+        // foreach element iz polja narudzbe (napunjen u podaci.js skripti)
+        narudzbe.forEach(element => {
+            bufferZaIspis += "<tr>";
+            bufferZaIspis += "<td></td>";
+            bufferZaIspis += "<td>" + element.brNar + "</td>";
+            bufferZaIspis += "<td>" + element.partner + "</td>";
+            bufferZaIspis += "</tr>";
+        }
+        );
+        //istakanje renedirane vrijedsnoti u body DOM element
+        body.innerHTML = bufferZaIspis;
+       
+       
+       
+        body = document.getElementById("tab_art");
+        //iniciljano postalvjanje prije foreach petlje
+        bufferZaIspis = "";
+        artikli.forEach(element => {
+            bufferZaIspis += "<tr>";
+            bufferZaIspis += "<td></td>";
+            bufferZaIspis += "<td>" + element.brArt + "</td>";
+            bufferZaIspis += "<td>" + element.naziv + "</td>";
+            bufferZaIspis += "</tr>";
+        }
+        );
+        //istakanje renedirane vrijedsnoti u body DOM element
+        body.innerHTML = bufferZaIspis;
+
+
+        function paliGasiIzbornik() {
+            //definicije varijable
+            //pozivanja javascript funkcije
+            var kulVarijabla = document.getElementById("idnav"); //dohvat DOM elementa preko vrijednosti id-a
+
+            //zahvat  vrijednosti css stila i to za atribu display -- vidi u css datoteci jel psotoji taj atribut
+            var trenutniStilZaNav = kulVarijabla.style.display;
+            if (trenutniStilZaNav === "block") { //tri === je operacija ispitivanja vrijednosti
+                kulVarijabla.style.display = "none"; //jedan = je operacija dodjeljivanja vrijednosti
+            } else {
+                kulVarijabla.style.display = "block";
+            }
+            //kulVarijabla.style.display = (kulVarijabla.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+
+</html>

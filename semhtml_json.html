@@ -187,12 +187,12 @@
 
 
         let gumbIzmjenaKorisnika = document.querySelector('[href="novi-korisnik"]');
-        gumbPregledArt.addEventListener('click', function (e) {
+        gumbIzmjenaKorisnika.addEventListener('click', function (e) {
             e.preventDefault();
             document.getElementById("pregled-korisnika").style.display = "none";
             document.getElementById("izmjena-korisnika").style.display = "block";
             document.getElementById("pregled-narudžbi").style.display = "none";
-            document.getElementById("pregled-artikala").style.display = "block";
+            document.getElementById("pregled-artikala").style.display = "none";
             document.getElementById("novi-korisnik").style.display = "block";
 
             let naslov = document.querySelector('#izmjena-korisnika h2');

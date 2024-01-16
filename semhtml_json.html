@@ -156,52 +156,9 @@
 
 
     <script src="lokalni_json/podaci.js"></script>
+    <script src="lokalni_json/gumbi.js"></script>
     <script>
-        let gumbPregledKorisnika = document.querySelector('[href="pregled-korisnika"]');
-        gumbPregledKorisnika.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.getElementById("pregled-korisnika").style.display = "block";
-            document.getElementById("izmjena-korisnika").style.display = "none";
-            document.getElementById("pregled-narudžbi").style.display = "none";
-            document.getElementById("pregled-artikala").style.display = "none";
-        });
-
-        let gumbPregledNar = document.querySelector('[href="pregled-narudžbi"]');
-        gumbPregledNar.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.getElementById("pregled-korisnika").style.display = "none";
-            document.getElementById("izmjena-korisnika").style.display = "none";
-            document.getElementById("pregled-narudžbi").style.display = "block";
-            document.getElementById("pregled-artikala").style.display = "none";
-
-        });
-
-        let gumbPregledArt = document.querySelector('[href="pregled-artikala"]');
-        gumbPregledArt.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.getElementById("pregled-korisnika").style.display = "none";
-            document.getElementById("izmjena-korisnika").style.display = "none";
-            document.getElementById("pregled-narudžbi").style.display = "none";
-            document.getElementById("pregled-artikala").style.display = "block";
-
-        });
-
-
-        let gumbIzmjenaKorisnika = document.querySelector('[href="novi-korisnik"]');
-        gumbIzmjenaKorisnika.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.getElementById("pregled-korisnika").style.display = "none";
-            document.getElementById("izmjena-korisnika").style.display = "block";
-            document.getElementById("pregled-narudžbi").style.display = "none";
-            document.getElementById("pregled-artikala").style.display = "none";
-            document.getElementById("novi-korisnik").style.display = "block";
-
-            let naslov = document.querySelector('#izmjena-korisnika h2');
-            naslov.innerHTML="Novi Korisnik";
-
-           
-
-        });
+     
 
         var body = document.getElementById("tab");
         //iniciljano postalvjanje prije foreach petlje

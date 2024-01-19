@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petlje u javascript-u</title>
+</head>
+
+<body>
+    <script>
+        for (let index = 0; index < 5; index++) {
+            document.write("<div> ovo je " + index + " -ti div na stranici</div>");
+
+        }
+        let polje = [" 5 euro", "10 eura", 7];
+        let brojElemenata = polje.length;
+        console.log("polje tj. array ima " + brojElemenata + " i to:");
+
+
+        for (let index = 0; index < brojElemenata; index++) {
+            document.write("<div>" + polje[index] + "</div>");
+
+        }
+        for (let index = 0; index < brojElemenata; (index=index+2)) {
+            document.write("<div>" + polje[index] + "</div>");
+        }
+        document.write("<ul>");
+        polje.forEach(element => {
+            document.write("<li>" + element + "</li>");
+
+        });
+        document.write("</ul>");
+    </script>
+</body>
+
+</html>

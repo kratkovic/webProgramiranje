@@ -30,8 +30,9 @@
     </nav>
     <article id="pregled-korisnika">
         <h2> Pregled korisnika</h2>
-        <a href="novi-korisnik" id="novi-korisnik" class="my-button">Novi Korisnik</a>
-      
+        <div class="paggination">
+            <a href="novi-korisnik">Novi korisnik</a>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -102,7 +103,7 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <input type="submit">
+                                <input type="submit" onclick="spremiIzmjeneKorisnika()">
                             </td>
                         </tr>
                     </tbody>
@@ -111,8 +112,50 @@
         </div>
 
     </article>
+    <article id="izmjena-narudzbi">
+        <h2> Izmjena Narudžbe</h2>
+        <div class="redak">
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Partner:</td>
+                            <td><input type="text" id="partner" name="partner">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Broj Narudžbe:</td>
+                            <td><input type="text" id="brNar" name="brNar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum unosa:</td>
+                            <td><input type="datetime-local" id="rodjendan" name="rodjendan">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum aktivacije:</td>
+                            <td><input type="datetime-local" id="aktivacija" name="aktivacija">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" onclick="spremiIzmjeneNarudzbe()">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </article>
+
     <article id="pregled-narudžbi">
         <h2> Pregled Narudžbi</h2>
+        <div class="paggination">
+            <a href="nova-narudzba">Nova narudzba</a>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -131,15 +174,13 @@
             <a href="#">3</a>
         </div>
     </article>
-
-
     <article id="pregled-artikala">
         <h2> Pregled Artikala</h2>
         <table>
             <thead>
                 <tr>
                     <th> </th>
-                    <th> Broj Artikla</th>
+                    <th> Šifra Artikla</th>
                     <th> Naziv</th>
                 </tr>
             </thead>
@@ -148,69 +189,21 @@
             </tbody>
         </table>
         <div class="paggination">
-            <a href="#">1</a>
+            <a href="#" class="odabran">1</a>
             <a href="#">2</a>
-            <a href="#" class="odabran">3</a>
+            <a href="#">3</a>
         </div>
     </article>
 
-
     <script src="lokalni_json/podaci.js"></script>
+    <script src="lokalni_json/korisnici.js"></script>
+    <script src="lokalni_json/narudzbe.js"></script>
     <script src="lokalni_json/gumbi.js"></script>
     <script>
-     
-
-        var body = document.getElementById("tab");
-        //iniciljano postalvjanje prije foreach petlje
-        let bufferZaIspis = "";
-        // foreach element iz polja podaci (napunjen u podaci.js skripti)
-        podaci.forEach(element => {
-            bufferZaIspis += "<tr>";
-            bufferZaIspis += "<td>";
-            bufferZaIspis += "<a href=\"korisnik.html\">"; // \ je escape znak kojim se 'isključuje' reovno funkcijoniranje " (dvostrukog navodnika)
-            bufferZaIspis += "<img src=\"" + element.slika + "\" alt=\"Korisnikova slika\">";
-            bufferZaIspis += "</a>";
-            bufferZaIspis += "</td>";
-            bufferZaIspis += "<td>" + element.ime + "</td>";
-            bufferZaIspis += "<td>" + element.prezime + "</td>";
-            bufferZaIspis += "<td>" + element.email + "</td>";
-            bufferZaIspis += "</tr>";
-        }
-        );
         //istakanje renedirane vrijedsnoti u body DOM element
         body.innerHTML = bufferZaIspis;
 
-        body = document.getElementById("tab_nar");
-        //iniciljano postalvjanje prije foreach petlje
-        bufferZaIspis = "";
-        // foreach element iz polja narudzbe (napunjen u podaci.js skripti)
-        narudzbe.forEach(element => {
-            bufferZaIspis += "<tr>";
-            bufferZaIspis += "<td></td>";
-            bufferZaIspis += "<td>" + element.brNar + "</td>";
-            bufferZaIspis += "<td>" + element.partner + "</td>";
-            bufferZaIspis += "</tr>";
-        }
-        );
-        //istakanje renedirane vrijedsnoti u body DOM element
-        body.innerHTML = bufferZaIspis;
-       
-       
-       
-        body = document.getElementById("tab_art");
-        //iniciljano postalvjanje prije foreach petlje
-        bufferZaIspis = "";
-        artikli.forEach(element => {
-            bufferZaIspis += "<tr>";
-            bufferZaIspis += "<td></td>";
-            bufferZaIspis += "<td>" + element.brArt + "</td>";
-            bufferZaIspis += "<td>" + element.naziv + "</td>";
-            bufferZaIspis += "</tr>";
-        }
-        );
-        //istakanje renedirane vrijedsnoti u body DOM element
-        body.innerHTML = bufferZaIspis;
-
+        let odabraniID = "";// ne nalazi se unutar nikave funkcije
 
         function paliGasiIzbornik() {
             //definicije varijable

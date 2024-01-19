@@ -2,7 +2,7 @@
 var podaci=[
     //prvi element = JSON oblik zapisa
     {
-        "id":"1",
+        "id":"0",
         "ime":"Josip",
         "prezime":"Mirković",
         "slika":"https://as2.ftcdn.net/v2/jpg/03/16/76/07/1000_F_316760793_VwaEcqW6A4D5A6Li9j4ArqY2i0KuSS5o.jpg" ,
@@ -10,7 +10,7 @@ var podaci=[
     },
  //drugi element
     {
-        "id":"2",
+        "id":"1",
         "ime":"Ivana",
         "prezime":"Mirković",
         "slika":"https://as2.ftcdn.net/v2/jpg/03/16/76/07/1000_F_316760793_VwaEcqW6A4D5A6Li9j4ArqY2i0KuSS5o.jpg" ,
@@ -23,19 +23,29 @@ var podaci=[
 var narudzbe=[
     //prvi element = JSON oblik zapisa
     {
-        "id":"1",
+        "id":"0",
         "brNar":"100",
         "partner":"Đuro Đaković spec."
+    },
+    {
+        "id":"1",
+        "brNar":"400",
+        "partner":"Drvna industrija Brod"
     }
      //n elementa ..
 ];
-
+//polje...
 var artikli=[
     //prvi element = JSON oblik zapisa
     {
+        "id":"0",
+        "brart":"100",
+        "naziv":"cipela"
+    },
+    {
         "id":"1",
-        "brArt":"1",
-        "naziv":"Opruga"
+        "brart":"200",
+        "naziv":"Čačakalica"
     }
      //n elementa ..
 ];

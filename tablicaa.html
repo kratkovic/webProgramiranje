@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablice sa spojenim ćelijama između redaka i kolona</title>
+</head>
+
+<body>
+    <h1>Tablice</h1>
+    <hr>
+    <h2>Spajanje ćelija – atributi rowspan i colspan</h2>
+    <p>
+        Oznakama &lt;th&gt; i &lt;td&gt; mogu se dodijeliti argumenti rowspan
+        i colspan, koji se koristi u slučaju kad se ćelija visinom (rowspan)
+        ili širinom (colspan) proteže kroz područje drugih ćelija u
+        tablici.<br>
+        Treba voditi računa da broj ćelija mora odgovarati i nakon spajanja
+        redaka ili stupaca.<br>
+    <p>
+        U ovoj tablici su spojene dvije ćelije stupaca u jednu pomoću colspan
+        atributa.<br>
+    <table border="1" width="50%" cellspacing="2" cellpadding="2" align="center">
+        <tr bgcolor="blue" align="center">
+            <td colspan=3>
+                <font color="yellow">
+                    Zaglavlje vizualno kroz tri ćelije
+                </font>
+            </td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <hr>
+    <p>
+        U ovoj tablici su spojene dvije ćelije redaka u jednu pomoću rowspan
+        atributa.<br>
+    <table border="1" width="50%" cellspacing="2" cellpadding="2" align="center">
+        <caption align="right"> Nekakav naslov na tablici</caption>
+        <tr bgcolor="#00ff00" align="center">
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td rowspan="2" valign="bottom" align="center">5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="5" align="center">
+                <font color="blue">Novi red</font>
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+
+</html>

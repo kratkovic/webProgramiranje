@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        let mojePolje = new Array();
+        //definicija funkcije
+        function mojaPrvaFunkcija() {
+            let cvor = document.getElementById("unos");
+            let vrijednost = cvor.value;
+            mojePolje.push(vrijednost);
+            // cvor.value="";
+            /* drugačiji način 
+            mojePolje.push(document.getElementById("unos"));
+            document.getElementById("unos").value="";
+             */
+
+            obradaPolje(mojePolje);
+            cvor.value = "";
+        }
+        //poziv našoj funkciji
+        // mojaPrvaFunkcija();
+        function obradaPolje(polje) {
+            let lista = document.getElementById("nasaLista");
+            lista.innerHTML = "";
+            for (let index = 0; index < polje.length; index++) {
+                let stavka = document.createElement("li");//kreiramo strukuru: <li></li>
+                stavka.setAttribute('id', index);
+                let vrStavke = document.createTextNode(polje[index]); //"tekst"
+
+                let gumb = document.createElement("button");
+                gumb.textContent = "x";
+                gumb.addEventListener("click", function () {
+                    obrisiStavku(index);
+
+                });
+                stavka.appendChild(gumb);
+                stavka.appendChild(vrStavke);// <li>"tekst"</li>
+                lista.appendChild(stavka);//<ul> .... <li>"tekst"</li>
+
+            }
+
+        }
+        function obrisiStavku(stavkax) {
+            mojePolje.splice(stavkax, 1);
+            obradaPolje(mojePolje);
+            
+        }
+    </script>
+    <div>
+        <input type="text" id="unos">
+        <input type="button" onclick="mojaPrvaFunkcija()" value="spremi">
+    </div>
+    <ul id="nasaLista">
+
+    </ul>
+</body>
+
+</html>

@@ -1,19 +1,16 @@
-table tbody td img {
-    /*css slektor za specifično ugnježđeni element */
+table tbody td img{ /*css slektor za specifično ugnježđeni element */
     width: 30px;
     border-radius: 30%;
 }
-
-header {
-    background: url('../slike/pozadina.jpg') center/cover;
+header{
+    background: url('../SlikaZaStranicu.jpg') center/cover;
     text-align: left;
     padding: 30px;
     padding-left: 150px;
-    font-size: 6vw;
-    color: rgb(157, 114, 63);
+    font-size:6vw; 
+    color: rgb(157, 114, 63); 
 }
-
-nav {
+nav{
     float: right;
     width: 30%;
     background-color: #333;
@@ -21,68 +18,56 @@ nav {
     padding: 20px;
     display: block;
 }
-
-nav a {
+nav a{
     display: block;
     color: white;
     text-decoration: none;
     border-bottom: 1px solid #555;
 }
-
 /* pregazi hover efekt na tablici
     tbody tr:nth-child(odd){
         background-color: #bbb4b4;
     }
  */
-table {
+table{
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
-
-td {
+td{
     text-align: center;
 }
 
 article {
     width: 70%;
 }
-
-article h2 {
+article h2{
     background-color: #333;
     color: white;
     margin: 0px;
     padding: 1px;
-    padding-left: 40px;
+    padding-left: 40px;        
 }
-
-nav a:hover {
+nav a:hover{
     background-color: #555;
-}
-
-#izbornik-toggle {
+}  
+#izbornik-toggle{
     display: none;
 }
-
-.kolona {
+.kolona{
     float: left;
     width: 50%;
 }
-
-@media screen and (max-width: 900px) {
-
-    /*uvjetno primjenjeivanje css vrijednosti ovisno o širini ekrana*/
-    nav {
+@media screen and (max-width: 900px) { /*uvjetno primjenjeivanje css vrijednosti ovisno o širini ekrana*/
+    nav{
         width: 100%;
         float: none;
     }
-
-    nav a {
+    nav a{
         width: 100%;
         float: none;
     }
-
-    #izbornik-toggle {
+    #izbornik-toggle{
         display: block;
         background-color: #333;
         color: white;
@@ -91,54 +76,49 @@ nav a:hover {
         padding: 10px;
         cursor: pointer;
     }
-
-    article {
+    article{
         width: 100%;
     }
 }
-
-@media screen and (max-width:600px) {
-    .kolona {
+@media screen and (max-width:600px){
+    .kolona{
         float: none;
         width: 100%;
     }
 }
-
-.paggination {
+.paggination{
     text-align: center;
 }
-
-.paggination a {
+.paggination a{
     text-decoration: none;
     border: 3px solid #333;
     border-radius: 4px;
     padding: 8px 16px;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 10px ;
 }
 
-.paggination a:hover {
+.paggination a:hover{
     background-color: #555;
-    color: white;
-}
-
-.odabran {
+    color:white ;
+}  
+.odabran{
     background-color: #555;
-    color: white;
+    color:white ;
 }
 
-#pregled-korisnika {
+#pregled-korisnika{
     display: none;
 }
-
-#izmjena-korisnika {
+#izmjena-korisnika{
     display: none;
 }
-
-#pregled-narudžbi {
+#pregled-narudžbi{
     display: none;
 }
-
 #pregled-artikala{
+    display: none;
+}
+#izmjena-narudzbi{
     display: none;
 }

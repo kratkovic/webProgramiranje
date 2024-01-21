@@ -14,15 +14,11 @@ gumbPregledNar.addEventListener('click', function (e) {
 let gumbPregledArt = document.querySelector('[href="pregled-artikala"]');
 gumbPregledArt.addEventListener('click', function (e) {
     e.preventDefault();
-    document.getElementById("pregled-korisnika").style.display = "none";
-    document.getElementById("izmjena-korisnika").style.display = "none";
-    document.getElementById("pregled-narudžbi").style.display = "none";
-    document.getElementById("pregled-artikala").style.display = "block";
-    document.getElementById("izmjena-narudzbi").style.display = "none";
+    osvjeziTablicuArtikla();
 
 });
-let gumbIzmjenaKorsnika = document.querySelector('[href="novi-korisnik"]');
-gumbIzmjenaKorsnika.addEventListener('click', function (e) {
+let gumbIzmjenaKorisnika = document.querySelector('[href="novi-korisnik"]');
+gumbIzmjenaKorisnika.addEventListener('click', function (e) {
     e.preventDefault();
     document.getElementById("pregled-korisnika").style.display = "none";
     document.getElementById("izmjena-korisnika").style.display = "block";
@@ -30,6 +26,7 @@ gumbIzmjenaKorsnika.addEventListener('click', function (e) {
     document.getElementById("pregled-artikala").style.display = "none";
      document.getElementById("izmjena-korisnika").style.display = "none";
      document.getElementById("izmjena-narudzbi").style.display = "none";
+     document.getElementById("izmjena-artikla").style.display = "none";
     let naslov = document.querySelector('#izmjena-korisnika h2');
     naslov.innerHTML = "Novi korisnik";
 });
@@ -43,8 +40,24 @@ gumbIzmjenaNarudzbi.addEventListener('click', function (e) {
     document.getElementById("pregled-artikala").style.display = "none";
      document.getElementById("izmjena-korisnika").style.display = "none";
      document.getElementById("izmjena-narudzbi").style.display = "block";
+     document.getElementById("izmjena-artikla").style.display = "none";
     let naslov = document.querySelector('#izmjena-narudzbi h2');
     naslov.innerHTML = "Nova narudžba";
+});
+
+let gumbIzmjenaArtikla = document.querySelector('[href="novi-artikl"]');
+gumbIzmjenaArtikla.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById("pregled-korisnika").style.display = "none";
+    document.getElementById("izmjena-korisnika").style.display = "none";
+    document.getElementById("pregled-narudžbi").style.display = "none";
+    document.getElementById("pregled-artikala").style.display = "none";
+     document.getElementById("izmjena-korisnika").style.display = "none";
+     document.getElementById("izmjena-narudzbi").style.display = "none";
+     document.getElementById("izmjena-artikla").style.display = "block";
+
+    let naslov = document.querySelector('#izmjena-artikla h2');
+    naslov.innerHTML = "Novi artikl";
 });
 
 

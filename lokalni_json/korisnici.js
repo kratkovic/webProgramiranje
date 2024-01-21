@@ -26,6 +26,7 @@ function osvjeziTablicuKorisnika() {
     document.getElementById("pregled-narudžbi").style.display = "none";
     document.getElementById("pregled-artikala").style.display = "none";
     document.getElementById("izmjena-narudzbi").style.display = "none";
+    document.getElementById("izmjena-artikla").style.display = "none";
 }
 
 function dohvatiDetaljeKor(x) {
@@ -45,9 +46,11 @@ function dohvatiDetaljeKor(x) {
     document.getElementById("pregled-narudžbi").style.display = "none";
     document.getElementById("pregled-artikala").style.display = "none";
     document.getElementById("izmjena-narudzbi").style.display = "none";
+    document.getElementById("izmjena-artikla").style.display = "none";
+    
     //Ako se prije primjenio naziv na novi korisnik, sada vraćam nazad na: izmjeni korisnika
-    let naslov = document.querySelector('#izmjena-narudžbe h2');
-    naslov.innerHTML = "Izmjeni narudžbu";
+    let naslov = document.querySelector('#izmjena-korisnika h2');
+    naslov.innerHTML = "Izmjeni korisnika";
 }
 function spremiIzmjeneKorisnika() {
     if (odabraniID == "") {

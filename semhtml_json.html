@@ -47,8 +47,8 @@
             </tbody>
         </table>
         <div class="paggination">
-            <a href="#">1</a>
-            <a href="#" class="odabran">2</a>
+            <a href="#" class="odabran">1</a>
+            <a href="#" >2</a>
             <a href="#">3</a>
         </div>
     </article>
@@ -169,13 +169,16 @@
             </tbody>
         </table>
         <div class="paggination">
-            <a href="#" class="odabran">1</a>
-            <a href="#">2</a>
+            <a href="#">1</a>
+            <a href="#"class="odabran">2</a>
             <a href="#">3</a>
         </div>
     </article>
     <article id="pregled-artikala">
         <h2> Pregled Artikala</h2>
+        <div class="paggination">
+            <a href="novi-artikl">Novi artikl</a>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -189,16 +192,48 @@
             </tbody>
         </table>
         <div class="paggination">
-            <a href="#" class="odabran">1</a>
+            <a href="#" >1</a>
             <a href="#">2</a>
-            <a href="#">3</a>
+            <a href="#" class="odabran">3</a>
         </div>
+    </article>
+
+    <article id="izmjena-artikla">
+        <h2> Izmjena Artikla</h2>
+        <div class="redak">
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Broj artikla:</td>
+                            <td><input type="text" id="brart" name="brart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Naziv:</td>
+                            <td><input type="text" id="naziv" name="naziv">
+                            </td>
+                        </tr>
+                                            
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" onclick="spremiIzmjeneArtikla()">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
     </article>
 
     <script src="lokalni_json/podaci.js"></script>
     <script src="lokalni_json/korisnici.js"></script>
     <script src="lokalni_json/narudzbe.js"></script>
+    <script src="lokalni_json/artikli.js"></script>
     <script src="lokalni_json/gumbi.js"></script>
+
     <script>
         //istakanje renedirane vrijedsnoti u body DOM element
         body.innerHTML = bufferZaIspis;

@@ -49,3 +49,40 @@ var artikli=[
     }
      //n elementa ..
 ];
+
+var pregledi = [
+    "pregled-korisnika",
+    "pregled-narudžbi",
+    "pregled-artikala",
+    "izmjena-korisnika",
+    "izmjena-narudzbe",
+    "izmjena-artikla"];
+
+function aktivirajPregled(article_id){
+    pregledi.forEach(element => { 
+            if(element==article_id){
+                //za predani id aktiviraj(prikaži) pripadni html tag article article
+                document.getElementById(element).style.display="block";
+            }else{
+                //ostale html tagove article  -> deaktiviraj/sakrij
+                document.getElementById(element).style.display="none";
+            }
+            
+        } 
+    );
+}
+
+function ispisDatumUCeliju(x){
+    let parsiraniDAtum= new Date(x);
+    if( ! isNaN(parsiraniDAtum)){      
+        //let d=parsiraniDAtum.getDay();//broj dan u tjednu
+        let d=parsiraniDAtum.getDate();
+        let m=parsiraniDAtum.getMonth();//mjesec u godini, počevši od 0
+        m+=1;
+        let y= parsiraniDAtum.getFullYear()   ;  
+
+        return "<td >"+d+"."+m+"."+y+"</td>";
+    }else{
+        return "<td ></td>";
+    }
+}

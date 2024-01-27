@@ -14,6 +14,8 @@ function osvjeziTablicuKorisnika() {
         bufferZaIspis += "<td>" + element.ime + "</td>";
         bufferZaIspis += "<td>" + element.prezime + "</td>";
         bufferZaIspis += "<td>" + element.email + "</td>";
+        bufferZaIspis += ispisDatumUCeliju(element.rodjendan) ;      
+        bufferZaIspis += ispisDatumUCeliju(element.aktivacija) ;      
         bufferZaIspis += "</tr>";
     });
 

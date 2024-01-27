@@ -73,13 +73,13 @@ function aktivirajPregled(article_id){
 }
 
 function ispisDatumUCeliju(x){
-    let parsiraniDAtum= new Date(x);
-    if( ! isNaN(parsiraniDAtum)){      
-        //let d=parsiraniDAtum.getDay();//broj dan u tjednu
-        let d=parsiraniDAtum.getDate();
-        let m=parsiraniDAtum.getMonth();//mjesec u godini, počevši od 0
+    let parsiraniDatum= new Date(x);
+    if( ! isNaN(parsiraniDatum)){      
+      
+        let d=parsiraniDatum.getDate();
+        let m=parsiraniDatum.getMonth();
         m+=1;
-        let y= parsiraniDAtum.getFullYear()   ;  
+        let y= parsiraniDatum.getFullYear()   ;  
 
         return "<td >"+d+"."+m+"."+y+"</td>";
     }else{

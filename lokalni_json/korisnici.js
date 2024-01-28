@@ -14,8 +14,8 @@ function osvjeziTablicuKorisnika() {
         bufferZaIspis += "<td>" + element.ime + "</td>";
         bufferZaIspis += "<td>" + element.prezime + "</td>";
         bufferZaIspis += "<td>" + element.email + "</td>";
-        bufferZaIspis += ispisDatumUCeliju(element.rodjendan) ;      
-        bufferZaIspis += ispisDatumUCeliju(element.aktivacija) ;      
+        bufferZaIspis += ispisDatumUCeliju(element.rodjendan);
+        bufferZaIspis += ispisDatumUCeliju(element.aktivacija);
         bufferZaIspis += "</tr>";
     });
 
@@ -39,8 +39,8 @@ function dohvatiDetaljeKor(x) {
             document.getElementById("ime").value = podaci[i].ime;
             document.getElementById("prezime").value = podaci[i].prezime;
             document.getElementById("email").value = podaci[i].email;
-            document.getElementById("rodjendan").value =korisnici[i].rodjendan;
-            document.getElementById("aktivacija").value =korisnici[i].aktivacija;
+            document.getElementById("rodjendan").value = korisnici[i].rodjendan;
+            document.getElementById("aktivacija").value = korisnici[i].aktivacija;
             odabraniID = x;//zapamti koji id smo odabrali
             break;
         }
@@ -51,7 +51,7 @@ function dohvatiDetaljeKor(x) {
     document.getElementById("pregled-artikala").style.display = "none";
     document.getElementById("izmjena-narudzbi").style.display = "none";
     document.getElementById("izmjena-artikla").style.display = "none";
-    
+
     //Ako se prije primjenio naziv na novi korisnik, sada vraćam nazad na: izmjeni korisnika
     let naslov = document.querySelector('#izmjena-korisnika h2');
     naslov.innerHTML = "Izmjeni korisnika";
@@ -63,7 +63,9 @@ function spremiIzmjeneKorisnika() {
             id: odabraniID,
             ime: document.getElementById("ime").value,
             prezime: document.getElementById("prezime").value,
-            email: document.getElementById("email").value
+            email: document.getElementById("email").value,
+            rodjendan: document.getElementById("rodjendan").value,
+            aktivacija: document.getElementById("aktivacija").value
         };
         podaci.push(noviClan);
         odabraniID = "";

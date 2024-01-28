@@ -39,6 +39,8 @@ function dohvatiDetaljeKor(x) {
             document.getElementById("ime").value = podaci[i].ime;
             document.getElementById("prezime").value = podaci[i].prezime;
             document.getElementById("email").value = podaci[i].email;
+            document.getElementById("rodjendan").value =korisnici[i].rodjendan;
+            document.getElementById("aktivacija").value =korisnici[i].aktivacija;
             odabraniID = x;//zapamti koji id smo odabrali
             break;
         }

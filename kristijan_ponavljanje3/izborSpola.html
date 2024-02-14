@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="uredenje.css">
+    <title>Izbor spola</title>
+   
+</head>
+<body>
+    <img src="../kristijan_ponavljanje2/pozadina.jpg" class="background-image">
+    <div id ="container">
+    <label for="odabirSpola">Odabir spola:</label>
+    <select id="odabirSpola" onchange="postaviIzPadajuceListe()">
+      
+        <option value="nijeOdabrano">Nije odabrano</option>
+        <option value="zensko">Žensko</option>
+        <option value="musko">Muško</option>
+    </select>
+</div>
+
+    <div id="container">
+        <br>
+        <input type="radio" name="spol" id="muski" value="Muški" onchange="postavi()"> Muški
+        <input type="radio" name="spol" id="zenski" value="Ženski" onchange="postavi()"> Ženski
+        <br>
+        <label for="rezultat">Odabrani spol:</label>
+        <p id="rezultat"></p>
+        <br>
+        <button onclick="ponisti()">Poništi</button>
+    </div>
+
+    <script src="funkcija.js"></script>
+
+</body>
+</html>

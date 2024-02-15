@@ -5,6 +5,7 @@ function postaviIzPadajuceListe() {
     var odabraniRadioGumb = document.getElementById(odabranaOpcija);
     if (odabraniRadioGumb) {
         odabraniRadioGumb.checked = true;
+       
     }
 
     document.getElementById("rezultat").innerHTML = "Odabrani spol: " + odabranaOpcija;

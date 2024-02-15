@@ -1,0 +1,17 @@
+button {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; 
+}
+    #prviDiv, #drugiDiv {
+    display: inline-block;
+    vertical-align: top; 
+    margin-right: 1px;
+}

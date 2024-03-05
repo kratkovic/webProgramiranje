@@ -1,0 +1,17 @@
+{
+  "name": "node_server",
+  "version": "1.0.0",
+  "description": "Spajanje na bazu",
+  "main": "nodedb.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kratkovic",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

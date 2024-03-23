@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantički HTML tagovi sa upotrebom lokalnog json-a</title>
+    <link rel="stylesheet" href="css/izgled.css" />
+</head>
+
+<style>
+    tbody tr:hover {
+        background-color: #e9e2e2;
+    }
+
+    #izmjena-korisnika {
+        display: block;
+    }
+</style>
+
+<body>
+    <header> Naslov na stranici</header>
+    <div id="izbornik-toggle" onclick="paliGasiIzbornik()">&equiv;Izbornik</div>
+    <nav id="idnav">
+        <a href="pregled-korisnika">Korisnici</a> <!-- ctrl + D dodatno slektiranje istog pojma-->
+        <a href="pregled-narudžbi">Narudžbe</a>
+        <a href="pregled-artikala"> Artikli </a>
+        <a href="pregled-igrica">Igrice</a>
+        <!-- ctrl + shift + strelica dole dupliciranje linije -->
+    </nav>
+    <article id="pregled-korisnika">
+        <h2> Pregled korisnika</h2>
+        <div class="paggination">
+            <a href="novi-korisnik">Novi korisnik</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th> Ime</th>
+                    <th> Prezime</th>
+                    <th> Email</th>
+                    <th> Datum rođenja</th>
+                    <th> Datum aktivacije</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tab">
+
+            </tbody>
+        </table>
+        <div class="paggination">
+            <a href="#">1</a>
+            <a href="#" class="odabran">2</a>
+            <a href="#">3</a>
+        </div>
+    </article>
+    <article id="izmjena-korisnika">
+        <h2> Izmjena korisnika</h2>
+        <div class="redak">
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Ime:</td>
+                            <td><input type="text" id="ime" name="ime">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prezime:</td>
+                            <td><input type="text" id="prezime" name="prezime">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>E-pošta:</td>
+                            <td><input type="text" id="email" name="email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum rođenja:</td>
+                            <td><input type="datetime-local" id="rodjendan" name="rodjendan">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum aktivacije:</td>
+                            <td><input type="datetime-local" id="aktivacija" name="aktivacija">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <!--src="https://as2.ftcdn.net/v2/jpg/03/16/76/07/1000_F_316760793_VwaEcqW6A4D5A6Li9j4ArqY2i0KuSS5o.jpg" -->
+                                <img src="./slike/uknown_avatar.jpg" alt="Korisnikova slika">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="file" id="data1" name="data1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" onclick="spremiIzmjeneKorisnika()">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </article>
+    <article id="izmjena-narudzbe">
+        <h2> Izmjena Narudžbe</h2>
+        <div class="redak">
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Broj Narudžbe:</td>
+                            <td><input type="text" id="brNar" name="brNar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Naziv partnera:</td>
+                            <td><input type="text" id="partner" name="partner">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum unosa:</td>
+                            <td><input type="datetime-local" id="rodjendan" name="rodjendan">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum aktivacije:</td>
+                            <td><input type="datetime-local" id="aktivacija" name="aktivacija">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" onclick="spremiIzmjeneNarudzbe()">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </article>
+    <article id="izmjena-artikla">
+        <h2> Izmjena Artikla</h2>
+        <div class="redak">
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Broj artikla:</td>
+                            <td><input type="text" id="artsifra" name="brart">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Naziv artikla:</td>
+                            <td><input type="text" id="artnaziv" name="naziv">
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>Cijena artikla:</td>
+                            <td><input type="text" id="artcijena" name="cijena">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum unosa:</td>
+                            <td><input type="datetime-local" id="artunos" name="artunos" placeholder="dd.mm.yyyy"
+                                    value="" min="2020-01-01" max="2030-12-31" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datum aktivacije:</td>
+                            <td><input type="date" id="artaktivacija" name="artaktivacija" placeholder="dd.mm.yyyy"
+                                    value="" min="2020-01-01" max="2030-12-31">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" onclick="spremiIzmjeneArtikla()">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </article>
+    <article id="pregled-narudžbi">
+        <h2> Pregled Narudžbi</h2>
+        <div class="paggination">
+            <a href="nova-narudzba">Nova Narudžba</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th> Broj Narudžbe</th>
+                    <th> Partner</th>
+                </tr>
+            </thead>
+            <tbody id="tab_nar">
+
+            </tbody>
+        </table>
+        <div class="paggination">
+            <a href="#" class="odabran">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+    </article>
+    <article id="pregled-artikala">
+        <h2> Pregled Artikala</h2>
+        <div class="paggination">
+            <a href="novi-artikl">Novi Artikl</a>
+            <div id="filterDiv" class="paggination" style="text-align: right;">
+                <input type="text" id="filterInput"
+                    style="padding: 8px 16px;display: inline-block; border-radius: 5px; border: solid #333;">
+                <button class="paggination" onclick="pretraziArtikle()"
+                    onmouseover="prikaziIznadGumba(this,'poruka_povecalo')"
+                    onmouseout="hideMessage('poruka_povecalo')">&#128269; </button>
+                <!-- Unicode znak koji predstavlja povećalo -->
+                <button class="paggination" onclick="ocistiPretraziArtikle()"
+                    onmouseover="prikaziIznadGumba(this,'poruka_metla')"
+                    onmouseout="hideMessage('poruka_metla')">&#129529; </button>
+                <!-- Unicode znak koji predstavlja metlu -->
+                <span id="poruka_povecalo"
+                    style="display: none; position: absolute; background-color: #fff; padding: 3px; border: 1px solid #333;">Filtriraj</span>
+                <!-- Poruka iznad gumba koja je skrivena početno -->
+                <span id="poruka_metla"
+                    style="display: none; position: absolute; background-color: #fff; padding: 3px; border: 1px solid #333;">Počisti
+                    filter</span> <!-- Poruka iznad gumba koja je skrivena početno -->
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th> </th>
+                        <th onclick="poredajArtiklePo(0)" id="c_art0"> Šifra Artikla</th>
+                        <th onclick="poredajArtiklePo(1)" id="c_art1"> Naziv</th>
+                        <th onclick="poredajArtiklePo(2)" id="c_art2"> Cijena</th>
+                        <th onclick="poredajArtiklePo(3)" id="c_art3"> Unešeno</th>
+                        <th onclick="poredajArtiklePo(4)" id="c_art4"> Aktivirano</th>
+                    </tr>
+                </thead>
+                <tbody id="tab_art">
+
+                </tbody>
+            </table>
+            <div style="text-align: right;">
+                <div id="pageSizeDiv" class="paggination"
+                    style="display: inline-block; text-align: left; padding-right: 5px;">
+                    <label for="paggingInput" style="display: inline-block; margin-right: 5px;">Br. redaka na stranici
+                    </label>
+                    <input type="text" id="paggingInput"
+                        style="padding: 5px; border-radius: 5px; border: 2px solid #333; width: 20px; text-align: center;"
+                        maxlength="3" value="10">
+                </div>
+            </div>
+
+
+            <div class="paggination" id="artStranice">
+                <button class="odabran paggination">1</a>
+                    <button class="paggination">2</a>
+                        <button class="paggination">3</a>
+            </div>
+    </article>
+    <article id="pregled-igrica">
+        <h2> Pregled Igrica</h2>
+        <div class="paggination">
+            <a href="nova-igrica">Nova Igrica</a>
+            <div id="filterDiv" class="paggination" style="text-align: right;">
+                <input type="text" id="filterInput_i"
+                    style="padding: 8px 16px;display: inline-block; border-radius: 5px; border: solid #333;">
+                <button class="paggination" onclick="pretraziIgrice()"
+                    onmouseover="prikaziIznadGumba(this,'poruka_povecalo_i')"
+                    onmouseout="hideMessage('poruka_povecalo_i')">&#128269; </button>
+                <!-- Unicode znak koji predstavlja povećalo -->
+                <button class="paggination" onclick="ocistiPretraziIgrice()"
+                    onmouseover="prikaziIznadGumba(this,'poruka_metla_i')"
+                    onmouseout="hideMessage('poruka_metla_i')">&#129529; </button>
+                <!-- Unicode znak koji predstavlja metlu -->
+                <span id="poruka_povecalo_i"
+                    style="display: none; position: absolute; background-color: #fff; padding: 3px; border: 1px solid #333;">Filtriraj</span>
+                <!-- Poruka iznad gumba koja je skrivena početno -->
+                <span id="poruka_metla_i"
+                    style="display: none; position: absolute; background-color: #fff; padding: 3px; border: 1px solid #333;">Počisti
+                    filter</span> <!-- Poruka iznad gumba koja je skrivena početno -->
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th> </th>
+                        <th onclick="poredajIgricePo(0)" id="c_gam0"> Naziv</th>
+                        <th onclick="poredajIgricePo(1)" id="c_gam1"> Izdavac</th>
+                        <th onclick="poredajIgricePo(2)" id="c_gam2"> Datum izdavanja</th>
+                        <th onclick="poredajIgricePo(3)" id="c_gam3"> Žanr</th>
+                        <th onclick="poredajIgricePo(4)" id="c_gam4"> Cijena</th>
+                    </tr>
+                </thead>
+                <tbody id="tab_igr">
+
+                </tbody>
+            </table>
+            <div style="text-align: right;">
+                <div id="pageSizeDiv" class="paggination"
+                    style="display: inline-block; text-align: left; padding-right: 5px;">
+                    <label for="paggingInput" style="display: inline-block; margin-right: 5px;">Br. redaka na stranici
+                    </label>
+                    <input type="text" id="paggingInput_i"
+                        style="padding: 5px; border-radius: 5px; border: 2px solid #333; width: 20px; text-align: center;"
+                        maxlength="3" value="10">
+                </div>
+            </div>
+
+
+            <div class="paggination" id="igrStranice">
+                <button class="odabran paggination">1</a>
+                    <button class="paggination">2</a>
+                        <button class="paggination">3</a>
+            </div>
+    </article>
+    <article id="izmjena-igrice">
+        <h2> Izmjena Igrice</h2>
+        <div class="redak">
+            <div class="kolona">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td><input type="hidden" id="igrid" name="igrid">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Naziv:</td>
+                            <td><input type="text" id="igrnaziv" name="naziv">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Izdavač:</td>
+                            <td><input type="text" id="igrizd" name="izdavac">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Datum Izdavanja:</td>
+                            <td><input type="date" id="igriz" name="datum_izdavanja" placeholder="dd.mm.yyyy" value=""
+                                    min="1980-01-01" max="2030-12-31">
+                            </td>
+                        <tr>
+                            <td>Žanr:</td>
+                            <td>
+                                <select id="igrzn" name="zanr">
+                                  
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cijena:</td>
+                            <td><input type="number" id="igrcijena" name="cijena">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" onclick="spremiIzmjeneIgrice()">
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </article>
+
+
+
+    <script src="js/podaci.js"></script>
+    <script src="js/korisnici.js"></script>
+    <script src="js/narudzbe.js"></script>
+    <script src="js/artikli.js"></script>
+    <script src="js/igrice.js"></script>
+    <script src="zanrovi.js"></script>
+    <script src="js/gumbi.js"></script>
+    <script>
+        let odabraniID = "";// ne nalazi se unutar nikave funkcije
+
+        function paliGasiIzbornik() {
+
+            var kulVarijabla = document.getElementById("idnav"); //dohvat DOM elementa preko vrijednosti id-a
+
+            //zahvat  vrijednosti css stila i to za atribut display -- provjeriti u css datoteci jel postoji taj atribut
+            var trenutniStilZaNav = kulVarijabla.style.display;
+            if (trenutniStilZaNav === "block") { //tri uzastopna znaka'=' ( === ) je operacija ispitivanja vrijednosti - usporedba
+                kulVarijabla.style.display = "none"; //jedan znak jednakosti '=' je operacija dodjeljivanja vrijednosti
+            } else {
+                kulVarijabla.style.display = "block";
+            }
+            //kulVarijabla.style.display = (kulVarijabla.style.display === "block") ? "none" : "block"; //skraćeni zapis, tkz. ternarni operator
+        }
+    </script>
+</body>
+
+</html>

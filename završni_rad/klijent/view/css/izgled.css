@@ -1,0 +1,142 @@
+table tbody td img{ /*css slektor za specifično ugnježđeni element */
+    width: 30px;
+    border-radius: 30%;
+}
+header{
+    background: url('../slike/skinutaslika.jpg') center/cover;
+    text-align: left;
+    padding: 30px;
+    padding-left: 150px;
+    font-size:6vw; 
+    color: rgb(57, 32, 1); 
+}
+nav{
+    float: right;
+    width: 30%;
+    background-color: #333;
+    box-sizing: border-box;
+    padding: 20px;
+    display: block;
+}
+nav a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+}
+/* pregazi hover efekt na tablici
+    tbody tr:nth-child(odd){
+        background-color: #bbb4b4;
+    }
+ */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+td{
+    text-align: center;
+}
+
+article {
+    width: 70%;
+}
+article h2{
+    background-color: #333;
+    color: white;
+    margin: 0px;
+    padding: 1px;
+    padding-left: 40px;        
+}
+nav a:hover{
+    background-color: #555;
+}  
+#izbornik-toggle{
+    display: none;
+}
+.kolona{
+    float: left;
+    width: 50%;
+}
+@media screen and (max-width: 900px) { /*uvjetno primjenjivanje css vrijednosti ovisno o širini ekrana => stilove koji će se primijeniti samo kada je širina ekrana manja ili jednaka 900 piksela.*/
+    nav{
+        width: 100%;
+        float: none;
+    }
+    nav a{
+        width: 100%;
+        float: none;
+    }
+    #izbornik-toggle{
+        display: block;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        margin-bottom: 1px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    article{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    /* Postavljanje širine article elementa na 1200 piksela */
+    body {
+      width: 1200px;
+      /* Pozicioniranje u sredini ekrana */
+      margin: 0 auto;
+    }
+}
+@media screen and (max-width:600px){
+    .kolona{
+        float: none;
+        width: 100%;
+    }    
+}
+
+.paggination a, .paggination button{
+    text-decoration: none;
+    border: 3px solid #333;
+    border-radius: 4px;
+    padding: 8px 16px;
+    display: inline-block;
+    margin-top: 10px ;
+}
+
+.paggination a:hover, .paggination button:hover{
+    background-color: #555;
+    color:white ;
+}  
+.odabran{
+    background-color: #555;
+    color:white ;
+}
+.paggination{
+    text-align: center;
+    cursor: pointer;
+}
+#pregled-korisnika{
+    display: none;
+}
+#izmjena-korisnika{
+    display: none;
+}
+#pregled-narudžbi{
+    display: none;
+}
+#pregled-artikala{
+    display: none;
+}
+#izmjena-narudzbe{
+    display: none;
+}
+#izmjena-artikla{
+    display: none;
+}
+#izmjena-igrice{
+    display: none;
+}
+#pregled-igrica{
+    display: none;
+}
